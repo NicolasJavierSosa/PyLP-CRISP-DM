@@ -36,8 +36,3 @@ Integrantes del equipo, ordenados alfabéticamente por **apellido**:
 - **Amarilla, Aldo Wilfredo**
 - **Eitner, Bianca Michelle**
 - **Sosa, Nicolás Javier**
-
----
-
-## 📂 Estructura del proyecto
-

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Experto - Predicción</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicar la fuente Inter a toda la página */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Estilo para los placeholders */
+        input::placeholder {
+            color: #9ca3af; /* gray-400 */
+        }
+
+        /* Estilo para los inputs de tipo number (ocultar flechas) */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor principal de la tarjeta -->
+    <div class="bg-gray-800 p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-md">
+
+        <!-- Encabezado -->
+        <div class="text-center mb-8">
+            <!-- Icono SVG de un cerebro (IA/Sistema Experto) -->
+            <svg class="w-16 h-16 mx-auto mb-4 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 11.904L9 12.75l.024.024L10.08 14.1l.024-.024L11.1 12.75l-.024-.024L10.08 11.904z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.08 11.904c.327.327.327.857 0 1.184S9.243 13.414 8.916 13.088L7.84 12.012l.024-.024 1.06-1.06.024.024.088.088z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.08 11.904c-.327.327-.327.857 0 1.184S10.917 13.414 11.244 13.088L12.32 12.012l-.024-.024-1.06-1.06-.024.024-.088.088z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.86 15.24c.327.327.327.857 0 1.184S6.757 16.75 6.43 16.423L5.354 15.347l.024-.024 1.06-1.06.024.024.088.088zM12.32 15.24c-.327.327-.327.857 0 1.184S13.417 16.75 13.744 16.423L14.82 15.347l-.024-.024-1.06-1.06-.024.024-.088.088z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25c.373 0 .741.026 1.106.076a.5.5 0 01.442.518c-.024.16-.04.322-.053.485-.137 1.848.162 3.748.887 5.426.357.82.88 1.55 1.528 2.15l.024.024.024-.024c.648-.6 1.17-.133 1.528 2.15.725 1.678 1.024 3.578.887 5.426-.013.163-.029.325-.053.485a.5.5 0 01-.442.518C12.741 21.724 12.373 21.75 12 21.75c-3.73 0-7.41-.026-11.06-.076a.5.5 0 01-.442-.518c.024-.16.04-.322.053-.485.137-1.848-.162-3.748-.887-5.426-.357-.82-.88-1.55-1.528-2.15l-.024-.024-.024.024c-.648.6-1.17.133-1.528-2.15-.725-1.678-1.024-3.578-.887-5.426.013-.163.029.325.053.485a.5.5 0 01.442-.518C4.59 2.276 8.27 2.25 12 2.25z" />
+            </svg>
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Sistema Experto de Predicción
+            </h1>
+        </div>
+        
+        <!-- Formulario -->
+        <form id="infer-form" class="space-y-6">
+            <div>
+                <label for="hours_studied" class="block mb-2 text-sm font-medium text-gray-400">Horas estudiadas</label>
+                <input type="number" step="any" id="hours_studied" placeholder="Ej: 10.5" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" required>
+            </div>
+
+            <div>
+                <label for="attendance_percent" class="block mb-2 text-sm font-medium text-gray-400">Porcentaje de asistencia (%)</label>
+                <input type="number" step="any" id="attendance_percent" placeholder="Ej: 85.5" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" required>
+            </div>
+
+            <div>
+                <label for="previous_scores" class="block mb-2 text-sm font-medium text-gray-400">Puntaje previo</label>
+                <input type="number" step="any" id="previous_scores" placeholder="Ej: 75.0" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" required>
+            </div>
+
+            <button type="submit" class="w-full py-3 px-4 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300">
+                Inferir Predicción
+            </button>
+        </form>
+
+        <!-- Sección de Resultados -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-center mb-4">Resultado</h2>
+            <div id="result" class="bg-gray-700 rounded-lg p-6 min-h-[100px] flex items-center justify-center text-center">
+                <p class="text-gray-400">El resultado de la predicción aparecerá aquí.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spinner de carga (oculto por defecto) -->
+    <div id="loading-spinner" class="hidden">
+        <svg class="animate-spin h-8 w-8 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span class="ml-3 text-lg">Procesando...</span>
+    </div>
+
+    <script>
+        document.getElementById("infer-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const resultDiv = document.getElementById("result");
+            const loadingSpinner = document.getElementById("loading-spinner").innerHTML;
+
+            // 1. Mostrar estado de carga
+            resultDiv.innerHTML = `<div class="flex items-center justify-center">${loadingSpinner}</div>`;
+
+            const data = {
+                hours_studied: parseFloat(document.getElementById("hours_studied").value),
+                attendance_percent: parseFloat(document.getElementById("attendance_percent").value),
+                previous_scores: parseFloat(document.getElementById("previous_scores").value)
+            };
+
+            try {
+                const response = await fetch("http://localhost:8080/infer", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error en la petición: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+
+                // 2. Mostrar resultado exitoso - CORREGIDO: usar result.resultado
+                resultDiv.innerHTML = `
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl mb-2">🔮</span>
+                        <p class="text-lg text-gray-200">Predicción del Sistema:</p>
+                        <p class="text-2xl font-bold text-green-400">${result.resultado}</p>
+                    </div>
+                `;
+
+            } catch (error) {
+                // 3. Mostrar estado de error
+                console.error("Error al inferir:", error);
+                resultDiv.innerHTML = `
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl mb-2">❌</span>
+                        <p class="text-lg font-semibold text-red-400">Error en la Inferencia</p>
+                        <p class="text-sm text-gray-400">${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

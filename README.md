@@ -1,13 +1,12 @@
 # Sistema Experto para Predicción de Rendimiento Académico
 
-Este proyecto implementa un **Sistema Experto basado en reglas**, construido a partir de un árbol de decisión generado con técnicas de Machine Learning.  
-El objetivo del sistema es **predecir si un estudiante alcanzará un rendimiento satisfactorio (Y/N)** en función de tres variables:
+Luego de realizar el modelado en RapidMiner, se obtuvo un Árbol de Decisión capaz de predecir si un estudiante aprobará (“Y”) o no (“N”) en función de tres variables relevantes:
 
 - **Horas estudiadas (hours_studied)**
 - **Asistencia (%) (attendance_percent)**
 - **Puntaje previo (previous_scores)**
 
-La lógica de decisión fue traducida a un conjunto de reglas implementadas en **Prolog**, que actúan como motor inferencial del sistema experto.
+Estas reglas surgen directamente del Árbol de Decisión generado en la fase de modelado y fueron traducidas a Prolog para su utilización dentro de un programa web.
 
 ---
 

@@ -19,13 +19,13 @@ home_handler(_Request) :-
     format('<html>'),
     format('<head>'),
     format('<meta charset="UTF-8">'),
-    format('<title>Sistema Experto</title>'),
+    format('<title>Programación lógica</title>'),
     format('<script src="https://cdn.tailwindcss.com"></script>'),
     format('</head>'),
     format('<body class="bg-gray-900 p-4">'),
     
     format('<div class="max-w-md mx-auto mt-10 bg-gray-800 p-6 rounded-lg">'),
-    format('<h1 class="text-2xl text-white text-center mb-6">Sistema Experto</h1>'),
+    format('<h1 class="text-2xl text-white text-center mb-6">Programación lógica</h1>'),
     
     format('<form id="form">'),
     format('<div class="mb-4">'),

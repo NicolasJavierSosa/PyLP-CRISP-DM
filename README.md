@@ -12,9 +12,8 @@ Estas reglas surgen directamente del Árbol de Decisión generado en la fase de 
 
 ## 🚀 Tecnologías utilizadas
 
-- **Prolog (SWI-Prolog)** – Motor del sistema experto  
+- **Prolog (SWI-Prolog)** – Motor logico
 - **HTML / CSS** – Interfaz de usuario  
-- **JavaScript** – Comunicación con el backend Prolog  
 
 ---
 
